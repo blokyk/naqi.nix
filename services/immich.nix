@@ -7,7 +7,7 @@
     host = "127.0.0.1"; # allow any host
     port = 2283;
 
-    openFirewall = true;
+    database.enableVectors = false; # don't enable pgvecto-rs
   };
 
   # setup immich on the img.zoeee.net subdomain
