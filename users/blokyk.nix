@@ -15,6 +15,9 @@ in
 
   home-manager.users.blokyk = import ./blokyk/home.nix;
 
+  # use system's nixpkgs instead of HM's one
+  home-manager.useGlobalPkgs = true;
+
   # we have to enable nixos's zsh because otherwise nix will just refuse to change the shell (fair enough tbh)
   programs.zsh.enable = true;
   users.users.blokyk.shell = pkgs.zsh;
