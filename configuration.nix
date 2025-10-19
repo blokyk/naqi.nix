@@ -92,8 +92,9 @@
     };
   };
 
-  # Use ssh-agent to manage *our* SSH private keys (!= host keys)
-  #programs.ssh.startAgent = true;
+  # Enable mosh, the mobile shell; a better remote shell built atop SSH
+  # Opens UDP ports [60_000..61_000]
+  programs.mosh.enable = true;
 
   # Enable QEMU guest integrations
   services.qemuGuest.enable = true;
