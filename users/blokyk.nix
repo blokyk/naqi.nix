@@ -17,6 +17,8 @@ in
 
   # use system's nixpkgs instead of HM's one
   home-manager.useGlobalPkgs = true;
+  # add packages to `users.users.blokyk.packages` instead of an HM-managed nix-profile
+  home-manager.useUserPackages = true;
 
   # we have to enable nixos's zsh because otherwise nix will just refuse to change the shell (fair enough tbh)
   programs.zsh.enable = true;
