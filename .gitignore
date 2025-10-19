@@ -1,0 +1,5 @@
+# This file is unique to each machine and basically never changes after install
+# Therefore, we don't want /or need/ to track it
+hardware-configuration.nix
+
+.vscode/
