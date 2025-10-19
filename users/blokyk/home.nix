@@ -38,7 +38,8 @@ in
    };
   };
 
-  # use nix-index for the command-not-found utility, which gives a list of pkgs
-  # that could provide the given command
-  # programs.nix-index.enable = true; # disabled bc it's too slow (and you can't ctrl-c it)
+  # disabled bc it's too slow (and you can't ctrl-c it)
+  # # use nix-index for the command-not-found utility, which gives a list of pkgs
+  # # that could provide the given command
+  # programs.nix-index.enable = true;
 }
