@@ -6,7 +6,8 @@ in
 {
   services.suwayomi-server = {
     enable = true;
-    openFirewall = true;
+    openFirewall = false; # we already proxy through nginx
+
     settings.server = {
       port = port;
       basicAuthEnabled = true;
