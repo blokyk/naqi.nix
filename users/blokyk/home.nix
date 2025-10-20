@@ -12,6 +12,7 @@ in
     gitstatus
     fd
     ripgrep
+    nixos-option
   ];
 
   home.sessionVariables.NIXD_FLAGS = "-log=error";
