@@ -3,12 +3,15 @@
 {
   services.nginx.virtualHosts."zoeee.net" = {
     locations."/" = {
-      return = ''
-        200 '<html><body><h1>hello, world!</h1> <br/>-- from <code style="font-size: 1.3em">naqi</code></body></html>'
-      '';
-      extraConfig = ''
-        default_type text/html;
-      '';
+      root = "/var/www/zoeee.net";
     };
+
+    # todo: robots.txt
+    # locations."/robots.txt" = {
+    #   extraConfig = ''
+    #     rewrite ^/(.*)  $1;
+    #     return 200 "User-agent: *\nDisallow: /";
+    #   '';
+    # };
   };
 }
