@@ -30,6 +30,7 @@ in {
         Suwayomi = "suwayomi-server";
         Immich = "immich-server";
         nginx = "nginx";
+        FlareSolverr = "flaresolverr";
       };
     };
 
