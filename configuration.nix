@@ -56,11 +56,6 @@
     netop
   ];
 
-
-  #fixme: BAD!! remove!!!
-  security.sudo.wheelNeedsPassword = false;
-  warnings = [ "FIXME: Remove security.sudo.wheelNeedsPassword = true" ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
