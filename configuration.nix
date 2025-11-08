@@ -8,13 +8,9 @@
   # on a new system, you might need to do
   #   export NIX_PATH="$NIX_PATH:custom=/etc/nixos/modules"
   # before invoking `nixos-rebuild`
-  nix.nixPath = options.nix.nixPath.default ++ [
-    "custom=/etc/nixos/modules"
-  ];
-
-  nix.settings.experimental-features = [ "nix-command" ];
 
   imports = [
+    ./nix.nix
     ./hardware-configuration.nix
     ./networking.nix
     ./services
