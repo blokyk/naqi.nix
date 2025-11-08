@@ -10,9 +10,11 @@
   # before invoking `nixos-rebuild`
 
   imports = [
-    ./nix.nix
     ./hardware-configuration.nix
     ./networking.nix
+    ./nix.nix
+
+    ./misc
     ./services
     ./users
   ];
