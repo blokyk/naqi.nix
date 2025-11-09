@@ -13,8 +13,8 @@
 
   # setup immich on the img.zoeee.net subdomain
   services.nginx.virtualHosts."img.zoeee.net" = {
-    #enableACME = true;
-    forceSSL = false; # fixme: setup ssl
+    enableACME = true;
+    forceSSL = true;
     locations."/" = {
       proxyPass = "http://127.0.0.1:${toString config.services.immich.port}";
       proxyWebsockets = true;

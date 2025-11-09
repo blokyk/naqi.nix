@@ -2,6 +2,8 @@
 
 {
   services.nginx.virtualHosts."zoeee.net" = {
+    forceSSL = true;
+    enableACME = true;
     locations."/" = {
       root = "/var/www/zoeee.net";
     };
