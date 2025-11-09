@@ -4,9 +4,11 @@
 
 { config, lib, options, pkgs, ... }:
 
-{
+let
+  mypkgs = import <zoeee/pkgs> {};
+in {
   # on a new system, you might need to do
-  #   export NIX_PATH="$NIX_PATH:custom=/etc/nixos/modules"
+  #   nix-channel --add 'https://github.com/blokyk/packages.nix' zoeee
   # before invoking `nixos-rebuild`
 
   imports = [
@@ -17,6 +19,8 @@
     ./misc
     ./services
     ./users
+
+    <zoeee/modules>
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -52,6 +56,7 @@
     dig
     nixd
     netop
+    mypkgs.picoshare
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

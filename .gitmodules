@@ -1,3 +1,0 @@
-[submodule "modules/zsh-powerlevel10k"]
-	path = modules/zsh-powerlevel10k
-	url = git@github.com:Blokyk/zsh-powerlevel10k.nix.git

@@ -2,7 +2,7 @@ let
   aliases = import ./aliases.nix;
 in
 { config, lib, pkgs, xdg, ... }: {
-  imports = [ <custom/zsh-powerlevel10k> ];
+  imports = [ <zoeee/hm-modules> ];
 
   home.stateVersion = "25.05"; # this should stay at the version originally installed
 
