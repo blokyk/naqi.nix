@@ -1,12 +1,10 @@
 # a few resources i want to serve with a short link for misc reasons
 
-{ config, lib, pkgs, ... }:
-
-{
+{ ... }: {
   services.nginx.virtualHosts."zoeee.net" = {
     locations."/shrug" = {
       return = ''
-         200 '¯\_(ツ)_/¯'
+        200 '¯\_(ツ)_/¯'
       '';
       extraConfig = ''
         default_type text/plain;

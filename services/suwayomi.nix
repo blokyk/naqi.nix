@@ -1,9 +1,7 @@
-{ config, lib, pkgs, ... }:
-
+{ ... }:
 let
   port = 7431;
-in
-{
+in {
   services.suwayomi-server = {
     enable = true;
     openFirewall = false; # we already proxy through nginx

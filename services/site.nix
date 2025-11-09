@@ -1,6 +1,4 @@
-{ config, lib, pkgs, ... }:
-
-{
+{ ... }: {
   services.nginx.virtualHosts."zoeee.net" = {
     forceSSL = true;
     enableACME = true;

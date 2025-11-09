@@ -1,7 +1,7 @@
+{ config, pkgs, ... }:
 let
   aliases = import ./aliases.nix;
-in
-{ config, lib, pkgs, xdg, ... }: {
+in {
   imports = [ <zoeee/hm-modules> ];
 
   home.stateVersion = "25.05"; # this should stay at the version originally installed
@@ -33,10 +33,10 @@ in
   };
 
   programs.zsh-powerlevel10k = {
-   enable = true;
-   theme = config.programs.zsh-powerlevel10k.themes.robbyrussell // {
-     mode = "compatible";
-   };
+    enable = true;
+    theme = config.programs.zsh-powerlevel10k.themes.robbyrussell // {
+      mode = "compatible";
+    };
   };
 
   # disabled bc it's too slow (and you can't ctrl-c it)

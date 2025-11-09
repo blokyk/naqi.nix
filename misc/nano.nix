@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
   programs.nano.nanorc = ''
     include "${pkgs.nanorc}/share/*.nanorc"
 
