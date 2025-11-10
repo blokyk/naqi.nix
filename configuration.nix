@@ -75,6 +75,13 @@ in {
   # Enable nginx, but let other parts of the config (e.g. immich, suwayomi, etc) set it up
   services.nginx.enable = true;
 
+  # don't require sudoers to type in passwords for sudo
+  #
+  # we only allow ssh key-based auth anyway, so only way in is through
+  # getting access to the blokyk account, but it doesn't run any service so
+  # i fail to see what attack vector there is (other than a bug in the kernel)
+  security.sudo.wheelNeedsPassword = false;
+
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
