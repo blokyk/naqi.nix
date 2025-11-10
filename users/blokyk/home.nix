@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   aliases = import ./aliases.nix;
+  p10k-themes = config.programs.zsh-powerlevel10k.themes;
 in {
   imports = [ <zoeee/hm-modules> ];
 
@@ -34,8 +35,9 @@ in {
 
   programs.zsh-powerlevel10k = {
     enable = true;
-    theme = config.programs.zsh-powerlevel10k.themes.robbyrussell // {
+    theme = p10k-themes.robbyrussell // {
       mode = "compatible";
+      right-prompt = [ "context" ]; # add a blokyk@naqi indicator on the very right
     };
   };
 
