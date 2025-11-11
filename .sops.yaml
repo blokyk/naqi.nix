@@ -1,3 +1,6 @@
+# This file should be at the top of the config folder since it needs to be seen
+# by sops when used in subfolders (e.g. services/)
+#
 # Also see:
 #   - https://github.com/Mic92/dotfiles/blob/d6114726d859df36ccaa32891c4963ae5717ef7f/nixos/.sops.yaml
 #   - https://github.com/nix-community/infra/blob/7aac7a0b2bd5d094664a7900b5fa54954abc5a33/.sops.yaml
@@ -6,7 +9,7 @@ keys:
   - &admin_blokyk age1mu2hltqcnhw08tf6tmlrnj93u0ylvj6y4xslrhpp04fvj2hvdymqr8vxaf
   - &server_naqi age1xptpfaajsxd2zqktdld04fd5v93ca7tx4dywfyvrlf87x42k7g0sqavzwn
 creation_rules:
-  - path_regex: secrets.yaml$
+  - path_regex: 'secrets.yaml$'
     key_groups:
     - age:
         - *admin_blokyk

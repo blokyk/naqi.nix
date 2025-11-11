@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 let
   commit = "524312bc62e3f34bd9231a2f66622663d3355133";
   sops-nix = builtins.fetchTarball {
@@ -6,8 +6,6 @@ let
     # replace this with an actual hash
     sha256 = "0qm4vglp47bw25ppdnsv3jnf5mwggkk7ssd8n9i59y2z0fcgdayq";
   };
-
-  suwayomi = config.services.suwayomi-server;
 in {
   imports = [
     "${sops-nix}/modules/sops"
@@ -17,8 +15,6 @@ in {
     sops
     age
   ];
-
-  sops.defaultSopsFile = ./secrets.yaml;
 
   # automatically import the server's host (private) key
   # !! MUST BE A STRING !! or it'll end up in the nix store...
@@ -31,12 +27,5 @@ in {
 
   # cf https://github.com/Mic92/sops-nix/blob/d75e4f89e58fdda39e4809f8c52013caa22483b7/README.md#set-secret-permissionowner-and-allow-services-to-access-it
   #  & https://github.com/Mic92/sops-nix/blob/d75e4f89e58fdda39e4809f8c52013caa22483b7/README.md#restartingreloading-systemd-units-on-secret-change
-  sops.secrets = {
-    suwayomi = lib.mkIf suwayomi.enable {
-      restartUnits = [ "suwayomi-server.service" ];
-      mode = "0440";
-      owner = suwayomi.user;
-      group = suwayomi.group;
-    };
-  };
+  sops.secrets = {};
 }

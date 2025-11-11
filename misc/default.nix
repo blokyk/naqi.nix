@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
     ./nano.nix
-    ./sops
+    ./sops.nix
   ];
 }
