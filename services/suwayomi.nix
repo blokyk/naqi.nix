@@ -1,6 +1,7 @@
-{ ... }:
+{ config, ... }:
 let
   port = 7431;
+  passwdFile = config.sops.secrets.suwayomi.path;
 in {
   services.suwayomi-server = {
     enable = true;
@@ -10,7 +11,7 @@ in {
       port = port;
       basicAuthEnabled = true;
       basicAuthUsername = "blokyk";
-      basicAuthPasswordFile = "/var/secrets/suwayomi-server/passwd"; # ! MUST BE A STRING! OTHERWISE PASSWORD WILL BE IN NIX STORE
+      basicAuthPasswordFile = passwdFile;
       extensionRepos = [ "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json" ];
     };
   };
