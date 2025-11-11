@@ -5,10 +5,10 @@ in {
   # a minimalist rss reader/aggregator
   services.miniflux = {
     enable = true;
-    adminCredentialsFile = "/var/secrets/miniflux.pass";
     config = {
       PORT = port;
       BASE_URL = "https://rss.zoeee.net/";
+      CREATE_ADMIN = 0;
     };
   };
 
