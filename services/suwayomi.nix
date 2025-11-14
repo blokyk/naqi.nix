@@ -2,6 +2,8 @@
 let
   suwayomi = config.services.suwayomi-server;
   passwdFile = config.sops.secrets.suwayomi.path;
+
+  flare = config.services.flaresolverr;
 in {
   services.suwayomi-server = {
     enable = true;
@@ -9,9 +11,18 @@ in {
 
     settings.server = {
       port = 7431;
+
       basicAuthEnabled = true;
       basicAuthUsername = "blokyk";
       basicAuthPasswordFile = passwdFile;
+
+      downloadAsCbz = true;
+
+      localSourcePath = suwayomi.dataDir;
+
+      flareSolverrEnabled = toString flare.enable;
+      flareSolverrUrl = "http://localhost:${toString flare.port}";
+
       extensionRepos = [ "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json" ];
     };
   };
