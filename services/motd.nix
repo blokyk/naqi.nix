@@ -31,6 +31,7 @@ in {
         nginx = "nginx";
         FlareSolverr = "flaresolverr";
         Miniflux = "miniflux";
+        Picoshare = "picoshare";
       };
     };
 
