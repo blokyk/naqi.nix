@@ -61,6 +61,7 @@ in {
     dig
     nixd
     netop
+    traceroute
     mypkgs.picoshare
   ];
 
