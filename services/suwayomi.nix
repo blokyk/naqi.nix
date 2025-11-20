@@ -20,7 +20,7 @@ in {
 
       localSourcePath = suwayomi.dataDir;
 
-      flareSolverrEnabled = toString flare.enable;
+      flareSolverrEnabled = flare.enable;
       flareSolverrUrl = "http://localhost:${toString flare.port}";
 
       extensionRepos = [ "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json" ];
