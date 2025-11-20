@@ -1,13 +1,24 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let
   suwayomi = config.services.suwayomi-server;
   passwdFile = config.sops.secrets.suwayomi.path;
+
+  version = "2.1.2009";
 
   flare = config.services.flaresolverr;
 in {
   services.suwayomi-server = {
     enable = true;
     openFirewall = false; # we already proxy through nginx
+
+    package = pkgs.suwayomi-server.overrideAttrs (old: {
+      version = version;
+      # specifically fetch the jar artifact
+      src = pkgs.fetchurl {
+        url = "https://github.com/Suwayomi/Suwayomi-Server-Preview/releases/download/v${version}/Suwayomi-Server-v${version}.jar";
+        hash = "sha256-sTyD0eQj+s5QSqXjlX+H6b29v7omvXZHpoWOrJc8W74=";
+      };
+    });
 
     settings.server = {
       port = 7431;
