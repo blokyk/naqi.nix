@@ -1,6 +1,23 @@
 # a few resources i want to serve with a short link for misc reasons
 
-{ ... }: {
+{ pkgs, ... }:
+let
+  sxc-gh = pkgs.fetchFromGitHub {
+    owner = "blokyk";
+    repo = "sxc-2024-report";
+    rev = "pretty";
+    hash = "sha256-gIkRh5XxjIbHM6Xi3KhSbSo973IAY8U/iwIbarkCiUo=";
+  };
+
+  sxc = pkgs.buildTypstDocument {
+    name = "sxc-2024.pdf";
+    src = sxc-gh;
+    typstEnv = universe: [ universe.algo ];
+    fonts = [
+      pkgs.libertinus
+    ];
+  };
+in {
   services.nginx.virtualHosts."zoeee.net" = {
     locations."/shrug" = {
       return = ''
@@ -16,6 +33,14 @@
       alias = "/var/www/brrr.opus";
       extraConfig = ''
         default_type audio/ogg;
+        try_files ''$uri =404;
+      '';
+    };
+
+    locations."=/sxc-2024.pdf" = {
+      alias = sxc;
+      extraConfig = ''
+        default_type application/pdf;
         try_files ''$uri =404;
       '';
     };
