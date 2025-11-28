@@ -3,7 +3,7 @@ let
   suwayomi = config.services.suwayomi-server;
   passwdFile = config.sops.secrets.suwayomi.path;
 
-  version = "2.1.2009";
+  version = "2.1.2019";
 
   flare = config.services.flaresolverr;
 in {
@@ -16,7 +16,7 @@ in {
       # specifically fetch the jar artifact
       src = pkgs.fetchurl {
         url = "https://github.com/Suwayomi/Suwayomi-Server-Preview/releases/download/v${version}/Suwayomi-Server-v${version}.jar";
-        hash = "sha256-sTyD0eQj+s5QSqXjlX+H6b29v7omvXZHpoWOrJc8W74=";
+        hash = "sha256-35tH8AmGgaqLfBEPjgTrB0wwI8W+obG0qavGi7XD5aU=";
       };
     });
 
