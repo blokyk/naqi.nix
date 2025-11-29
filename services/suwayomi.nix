@@ -23,17 +23,26 @@ in {
     settings.server = {
       port = 7431;
 
+      # Auth
       basicAuthEnabled = true;
       basicAuthUsername = "blokyk";
       basicAuthPasswordFile = passwdFile;
 
+      # Downloader
       downloadAsCbz = true;
-
       localSourcePath = suwayomi.dataDir;
 
+      # Library updates
+      excludeUnreadChapters = false;
+      excludeNotStarted = true;
+      excludeCompleted = true;
+      updateMangas = false;
+
+      # Cloudflare bypass
       flareSolverrEnabled = flare.enable;
       flareSolverrUrl = "http://localhost:${toString flare.port}";
 
+      # Extensions
       extensionRepos = [ "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json" ];
     };
   };
