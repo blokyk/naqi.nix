@@ -1,5 +1,8 @@
-{ ... }: {
+{ pkgs, ... }: {
   nix = {
+    # use Lix as main nix impl instead of CppNix
+    package = pkgs.lixPackageSets.stable.lix;
+
     settings = {
       experimental-features = [ "nix-command" ];
 
