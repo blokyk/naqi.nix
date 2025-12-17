@@ -23,8 +23,8 @@ in {
     group = freshrss.user;
   };
 
-  # note: picoshare doesn't support not being at the root, so we can't
-  # do `zoeee.net/sh` or something :/
+  # we can't define it with hostrr becauses freshrss uses complex rewriting
+  # rules and fastcgi in its nginx configuration
   services.nginx.virtualHosts = {
     "rss.zoeee.net" = {
       forceSSL = true;

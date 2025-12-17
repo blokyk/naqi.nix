@@ -52,14 +52,4 @@ in {
     owner = suwayomi.user;
     group = suwayomi.group;
   };
-
-  services.nginx.virtualHosts."manga.zoeee.net" = {
-    enableACME = true;
-    forceSSL = true;
-    locations."/" = {
-      proxyPass = "http://127.0.0.1:${toString suwayomi.settings.server.port}";
-      proxyWebsockets = true;
-      recommendedProxySettings = true;
-    };
-  };
 }

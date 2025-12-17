@@ -3,4 +3,6 @@
     acceptTerms = true;
     defaults.email = "pro.courvoisier+acme@gmail.com";
   };
+
+  services.hostrr.enableHTTPS = true;
 }
