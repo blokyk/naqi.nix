@@ -30,7 +30,6 @@ in {
         Immich = "immich-server";
         nginx = "nginx";
         FlareSolverr = "flaresolverr";
-        Miniflux = "miniflux";
         Picoshare = "picoshare";
       };
     };
