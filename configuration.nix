@@ -8,7 +8,8 @@ let
   mypkgs = import <zoeee/pkgs> {};
 in {
   # on a new system, you might need to do
-  #   nix-channel --add 'https://github.com/blokyk/packages.nix' zoeee
+  #   sudo nix-channel --add 'https://github.com/blokyk/packages.nix/archive/main.tar.gz' zoeee
+  #   sudo nix-channel --update
   # before invoking `nixos-rebuild`
 
   imports = [
