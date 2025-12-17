@@ -19,6 +19,7 @@ in {
 
     ./misc
     ./services
+    ./site
     ./users
 
     <zoeee/modules>
