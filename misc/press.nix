@@ -2,7 +2,7 @@
 let
   press = builtins.fetchGit {
     url = "https://github.com/RossSmyth/press";
-    rev = "8fab9f53a11e15a955a4a565d4a03ba0a7b728c8";
+    rev = "2807d1ed2315f971ccc6c61501f6bc0aaa0cb1bf";
     shallow = true;
   };
 in {
