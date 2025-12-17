@@ -1,8 +1,8 @@
-{ config, ... }: {
+{ ... }: {
   services.immich = {
     enable = true;
 
-    host = "127.0.0.1"; # allow any host
+    host = "0.0.0.0"; # allow any host
     port = 2283;
 
     openFirewall = false; # we already proxy through nginx
