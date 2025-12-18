@@ -1,7 +1,10 @@
 { pkgs, ... }: {
   services.hostrr.hosts = {
     ".".links = {
-      "shrug".file = pkgs.writeText "shrug" ''¯\_(ツ)_/¯'';
+      "shrug" = {
+        file = pkgs.writeText "shrug.txt" ''¯\_(ツ)_/¯'';
+        content-type = "text/plain";
+      };
 
       "brrr".file = /var/www/brrr.opus;
 
