@@ -6,7 +6,10 @@
         content-type = "text/plain";
       };
 
-      "brrr".file = /var/www/brrr.opus;
+      "brrr" = {
+        file = /var/www/brrr.opus;
+        content-type = "audio/opus";
+      };
 
       "sxc-2024.pdf" = let
         sxc-gh = pkgs.fetchFromGitHub {
