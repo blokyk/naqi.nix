@@ -3,22 +3,25 @@ let
   suwayomi = config.services.suwayomi-server;
   passwdFile = config.sops.secrets.suwayomi.path;
 
-  version = "2.1.2038";
-
   flare = config.services.flaresolverr;
 in {
+  nixpkgs.overlays = [(
+    final: prev: {
+      suwayomi-server = prev.suwayomi-server.overrideAttrs (old: rec {
+        version = "2.1.2038";
+
+        # specifically fetch the jar artifact
+        src = pkgs.fetchurl {
+          url = "https://github.com/Suwayomi/Suwayomi-Server-Preview/releases/download/v${version}/Suwayomi-Server-v${version}.jar";
+          hash = "sha256-5Md+Kgy3Fa9sHF3aK6iMTOmpo+yIMI/qaXaUmvCYF2g=";
+        };
+      });
+    }
+  )];
+
   services.suwayomi-server = {
     enable = true;
     openFirewall = false; # we already proxy through nginx
-
-    package = pkgs.suwayomi-server.overrideAttrs (old: {
-      version = version;
-      # specifically fetch the jar artifact
-      src = pkgs.fetchurl {
-        url = "https://github.com/Suwayomi/Suwayomi-Server-Preview/releases/download/v${version}/Suwayomi-Server-v${version}.jar";
-        hash = "sha256-5Md+Kgy3Fa9sHF3aK6iMTOmpo+yIMI/qaXaUmvCYF2g=";
-      };
-    });
 
     settings.server = {
       port = 7431;
