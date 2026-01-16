@@ -11,6 +11,9 @@
         content-type = "audio/opus";
       };
 
+      "zsotd".url = "https://www.youtube.com/playlist?list=PLW09UMpUBhV1Ab5BJR2On4e-K5q0VxjzG";
+      "zsotd-thread".url = "https://hachyderm.io/@blokyk/115639654995706452";
+
       "sxc-2024.pdf" = let
         sxc-gh = pkgs.fetchFromGitHub {
           owner = "blokyk";
