@@ -9,6 +9,7 @@ in {
 
   home.packages = with pkgs; [
     nix-output-monitor
+    nix-prefetch-github
     systemctl-tui
     gitstatus
     fd
