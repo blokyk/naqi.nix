@@ -1,0 +1,50 @@
+{
+  "pins": {
+    "home-manager": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "home-manager"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "bba859cd85b90dd9e4e6fd44b2af4aa64ae801a1",
+      "url": "https://github.com/nix-community/home-manager/archive/bba859cd85b90dd9e4e6fd44b2af4aa64ae801a1.tar.gz",
+      "hash": "sha256-jZi945d3e6DYhrw3K5Pew+QaL3qSgq3O6xiVaEVLgXs="
+    },
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixos-unstable",
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre927018.1412caf7bf9e/nixexprs.tar.xz",
+      "hash": "sha256-yufcwWDATMK48KBijfcdVrajf0IpaYEd2S51SL1XdMk="
+    },
+    "rosssmyth-press": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "RossSmyth",
+        "repo": "press"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "3a9440df6d0cf0f16a843fffc5bd418cec665956",
+      "url": "https://github.com/RossSmyth/press/archive/3a9440df6d0cf0f16a843fffc5bd418cec665956.tar.gz",
+      "hash": "sha256-WU5l1k6U17n7RIZPbcFXe3PZHQux6ClQGoYnlItFC2Q="
+    },
+    "zoeee": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "blokyk",
+        "repo": "packages.nix"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "43b88a8bbfd512d81a73013082295b7d7158d5c2",
+      "url": "https://github.com/blokyk/packages.nix/archive/43b88a8bbfd512d81a73013082295b7d7158d5c2.tar.gz",
+      "hash": "sha256-BGAJfa3VlEzUHZE1muaSCNhahW9l9RLGVIAEcZuDRak="
+    }
+  },
+  "version": 7
+}
