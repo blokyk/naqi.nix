@@ -6,8 +6,9 @@
     settings = {
       experimental-features = [ "nix-command" ];
 
-      # ensures that tarballs always get re-fetched when appropriate
-      tarball-ttl = 0;
+      # disabled because I'm not updating <zoeee> constantly anymore
+      # # ensures that tarballs always get re-fetched when appropriate
+      # tarball-ttl = 0;
     };
 
     gc = {
