@@ -1,14 +1,6 @@
-{ pkgs, ... }:
-let
-  commit = "524312bc62e3f34bd9231a2f66622663d3355133";
-  sops-nix = builtins.fetchTarball {
-    url = "https://github.com/Mic92/sops-nix/archive/${commit}.tar.gz";
-    # replace this with an actual hash
-    sha256 = "0qm4vglp47bw25ppdnsv3jnf5mwggkk7ssd8n9i59y2z0fcgdayq";
-  };
-in {
+{ pkgs, ... }: {
   imports = [
-    "${sops-nix}/modules/sops"
+    <sops-nix/modules/sops>
   ];
 
   environment.systemPackages = with pkgs; [

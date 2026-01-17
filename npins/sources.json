@@ -1,5 +1,18 @@
 {
   "pins": {
+    "ataraxia": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "AtaraxiaSjel",
+        "repo": "nur"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "1ec086c07ccdc3b7252fe6a89f1fea7d3370d253",
+      "url": "https://github.com/AtaraxiaSjel/nur/archive/1ec086c07ccdc3b7252fe6a89f1fea7d3370d253.tar.gz",
+      "hash": "sha256-6m2NlNi4MTkMJPsDyUV5y3Nz/qDQzvfEFPyZcKAEog8="
+    },
     "home-manager": {
       "type": "Git",
       "repository": {
@@ -31,6 +44,19 @@
       "revision": "3a9440df6d0cf0f16a843fffc5bd418cec665956",
       "url": "https://github.com/RossSmyth/press/archive/3a9440df6d0cf0f16a843fffc5bd418cec665956.tar.gz",
       "hash": "sha256-WU5l1k6U17n7RIZPbcFXe3PZHQux6ClQGoYnlItFC2Q="
+    },
+    "sops-nix": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Mic92",
+        "repo": "sops-nix"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "e085e303dfcce21adcb5fec535d65aacb066f101",
+      "url": "https://github.com/Mic92/sops-nix/archive/e085e303dfcce21adcb5fec535d65aacb066f101.tar.gz",
+      "hash": "sha256-NjKtkJraCZEnLHAJxLTI+BfdU//9coAz9p5TqveZwPU="
     },
     "zoeee": {
       "type": "Git",
