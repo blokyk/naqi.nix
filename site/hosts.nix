@@ -17,6 +17,9 @@
       };
 
       "manga".port = config.services.suwayomi-server.settings.server.port;
+
+      # syncyomi
+      "sync".port = config.services.syncyomi.settings.port;
     };
   };
 }

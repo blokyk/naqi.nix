@@ -1,18 +1,5 @@
 {
   "pins": {
-    "ataraxia": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "AtaraxiaSjel",
-        "repo": "nur"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "1e3391b9b93f43d2b15632bb5e14661644c26af0",
-      "url": "https://github.com/AtaraxiaSjel/nur/archive/1e3391b9b93f43d2b15632bb5e14661644c26af0.tar.gz",
-      "hash": "sha256-3N927OQ28mT0o0qlCDd1ke0wd2bDSwvi5W2s8X2Hocw="
-    },
     "home-manager": {
       "type": "Git",
       "repository": {
