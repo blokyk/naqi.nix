@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# A simple wrapper around `nixos-rebuild` to make it use the
-# correct NIX_PATH (based on the pins in npins/source.json)
-# instead of the ambient one.
+# Mostly a simple wrapper around `nixos-rebuild` to make it use
+# the correct NIX_PATH (based on the pins in npins/source.json)
+# instead of the ambient one. It also has ``
 #
 # This is particularly useful when bootstrapping this config,
 # since that means you don't have to setup any channels or do
@@ -14,11 +14,23 @@
 
 set -o errexit
 
-# make sure we're in /etc/nixos
-cd "$(dirname "$0")"
+if [[ "$*" = 0 ]]; then
+    echo "usage: "
+    echo "  $0 <shell|env>        exec into a new shell with the correct environment"
+    echo "  $0 <switch|test|...>  run nixos-rebuild with the given args"
+    exit 1
+fi
 
-nix_path="$(nix eval --raw -f npins/mk-nix-path.nix)"
+nixos_config="$(realpath "$(dirname "$0")")"
+
+nix_path="$(nix eval --raw -f "$nixos_config/npins/mk-nix-path.nix")"
+
+if [[ "$1" = "shell" ]] || [[ "$1" = "env" ]]; then
+    exec \
+        env NIX_PATH="nixos-config=$nixos_config/configuration.nix:$nix_path" \
+            $SHELL
+fi
 
 env \
-    NIX_PATH="nixos-config=$PWD/configuration.nix:$nix_path" \
+    NIX_PATH="nixos-config=$nixos_config/configuration.nix:$nix_path" \
     nixos-rebuild "$@"
