@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 let
   freshrss = config.services.freshrss;
   adminPass = config.sops.secrets.freshrss-admin;
@@ -17,7 +17,7 @@ in {
     language = "en";
   };
 
-  sops.secrets.freshrss-admin = {
+  sops.secrets.freshrss-admin = lib.mkIf freshrss.enable {
     sopsFile = ./freshrss.secrets.yaml;
     owner = freshrss.user;
     group = freshrss.user;

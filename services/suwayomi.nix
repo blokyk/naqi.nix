@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 let
   suwayomi = config.services.suwayomi-server;
   passwdFile = config.sops.secrets.suwayomi.path;
@@ -50,7 +50,7 @@ in {
     };
   };
 
-  sops.secrets.suwayomi = {
+  sops.secrets.suwayomi = lib.mkIf suwayomi.enable {
     sopsFile = ./suwayomi.secrets.yaml;
     owner = suwayomi.user;
     group = suwayomi.group;
