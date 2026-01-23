@@ -2,6 +2,16 @@
 let
   aliases = import ./aliases.nix;
   p10k-themes = config.programs.zsh-powerlevel10k.themes;
+
+  update-suwayomi = pkgs.writeShellApplication {
+    name = "update-suwayomi";
+    text = builtins.readFile ./update-suwayomi.sh;
+    runtimeInputs = with pkgs; [
+      coreutils
+      git
+      lixPackageSets.stable.lix
+    ];
+  };
 in {
   imports = [ <zoeee/hm-modules> ];
 
@@ -15,6 +25,7 @@ in {
     fd
     ripgrep
     nixos-option
+    update-suwayomi
   ];
 
   home.sessionVariables.NIXD_FLAGS = "-log=error";
