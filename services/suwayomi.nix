@@ -8,12 +8,12 @@ in {
   nixpkgs.overlays = [(
     final: prev: {
       suwayomi-server = prev.suwayomi-server.overrideAttrs (old: rec {
-        version = "2.1.2056";
+        version = "2.1.2060";
 
         # specifically fetch the jar artifact
         src = pkgs.fetchurl {
           url = "https://github.com/Suwayomi/Suwayomi-Server-Preview/releases/download/v${version}/Suwayomi-Server-v${version}.jar";
-          hash = "sha256-mz1piVdFWa/bWuPXImvlozFmeSit2VvJsguLAZkD4ms=";
+          hash = "sha256-AMwXScDrFzBcf/Q8rsJpQw/7PhTmv75ZS3d8SI7R2es=";
         };
       });
     }
