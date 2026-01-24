@@ -30,3 +30,4 @@ sudo nixos-rebuild switch --no-reexec
 
 git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos add /etc/nixos/services/suwayomi.nix
 git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos commit -m "suwayomi: update to v$version"
+git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos push
