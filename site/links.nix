@@ -37,6 +37,11 @@ in {
         typstEnv = universe: [ universe.algo ];
         fonts = [ pkgs.libertinus ];
       };
+
+      "cv.pdf" = buildTypstFromGitHub {
+        repo = "cv";
+        hash = "sha256-8rt46lfVQhF2/NW7DkdJUF4tM19Sfv4SgIaGYRhQGYg=";
+      };
     };
   };
 }
