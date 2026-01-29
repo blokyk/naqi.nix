@@ -1,4 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  buildTypstFromGitHub =
+    { repo, name ? "${repo}.pdf", rev ? "main", hash, typstEnv ? (_: []), fonts ? [] }: {
+      content-type = "application/pdf";
+      file = pkgs.buildTypstDocument {
+        inherit name typstEnv fonts;
+        src = pkgs.fetchFromGitHub {
+          owner = "blokyk";
+          inherit repo rev hash;
+        };
+      };
+    };
+in {
   services.hostrr.hosts = {
     ".".links = {
       "shrug" = {
@@ -16,25 +29,13 @@
 
       "proxy-tunnel".url = "https://github.com/blokyk/proxy-tunnel-pkg/releases/latest";
 
-      "sxc-2024.pdf" = let
-        sxc-gh = pkgs.fetchFromGitHub {
-          owner = "blokyk";
-          repo = "sxc-2024-report";
-          rev = "pretty";
-          hash = "sha256-gIkRh5XxjIbHM6Xi3KhSbSo973IAY8U/iwIbarkCiUo=";
-        };
+      "sxc-2024.pdf" = buildTypstFromGitHub {
+        repo = "sxc-2024-report";
+        rev = "pretty";
+        hash = "sha256-gIkRh5XxjIbHM6Xi3KhSbSo973IAY8U/iwIbarkCiUo=";
 
-        sxc = pkgs.buildTypstDocument {
-          name = "sxc-2024.pdf";
-          src = sxc-gh;
-          typstEnv = universe: [ universe.algo ];
-          fonts = [
-            pkgs.libertinus
-          ];
-        };
-      in {
-        file = sxc;
-        content-type = "application/pdf";
+        typstEnv = universe: [ universe.algo ];
+        fonts = [ pkgs.libertinus ];
       };
     };
   };
