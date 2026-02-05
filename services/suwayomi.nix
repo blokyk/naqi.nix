@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
   suwayomi = config.services.suwayomi-server;
   passwdFile = config.sops.secrets.suwayomi.path;
@@ -7,15 +7,25 @@ let
 in {
   nixpkgs.overlays = [(
     final: prev: {
-      suwayomi-server = prev.suwayomi-server.overrideAttrs (old: rec {
-        version = "2.1.2056";
+      suwayomi-server-unwrapped = (prev.callPackage <zoeee/pkgs> {}).suwayomi-server-unwrapped.overrideAttrs (
+        finalAttrs: _: {
+          version = "2.1.2056";
+          rev = "02da884f176e51c9ced8a95fa0954b4906522de7";
 
-        # specifically fetch the jar artifact
-        src = pkgs.fetchurl {
-          url = "https://github.com/Suwayomi/Suwayomi-Server-Preview/releases/download/v${version}/Suwayomi-Server-v${version}.jar";
-          hash = "sha256-mz1piVdFWa/bWuPXImvlozFmeSit2VvJsguLAZkD4ms=";
-        };
-      });
+          outputHash = "sha256-facd4Ifo0HTEC3J5kBpTt67qYD7BQocp4cMkxv5UrU0=";
+
+          # specifically fetch the jar artifact
+          src = prev.fetchFromGitHub {
+            owner = "Suwayomi";
+            repo = "Suwayomi-Server";
+            rev = finalAttrs.rev;
+            hash = "sha256-M1S40zp4/zlixMhXD/HhfJtIE3UlNk4cVeYoKCOrYi8=";
+          };
+        }
+      );
+      suwayomi-server = (prev.callPackage <zoeee/pkgs> {}).suwayomi-server.override {
+        inherit (final) suwayomi-server-unwrapped;
+      };
     }
   )];
 
