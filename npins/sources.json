@@ -9,15 +9,15 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "d505dc46dc9831d1db4e7d6e323b2c42d5eba3e6",
-      "url": "https://github.com/nix-community/home-manager/archive/d505dc46dc9831d1db4e7d6e323b2c42d5eba3e6.tar.gz",
-      "hash": "sha256-tJzEPNC6fMCzF4W8h2YdnvjlI4TpRV/yJg9cTnbwkfc="
+      "revision": "471e6a065f9efed51488d7c51a9abbd387df91b8",
+      "url": "https://github.com/nix-community/home-manager/archive/471e6a065f9efed51488d7c51a9abbd387df91b8.tar.gz",
+      "hash": "sha256-yFVde8QZK7Dc0Xa8eQDsmxLX4NJNfL1NKfctSyiQgMY="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre933481.c5296fdd05cf/nixexprs.tar.xz",
-      "hash": "sha256-nlVMTH3lSEtF+jygHr2bRqCxEcceCz3UzA9wsyO+RB4="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre940249.00c21e4c93d9/nixexprs.tar.xz",
+      "hash": "sha256-8JyM5HqkRXBXMnsIooEW0/hOoKrelRdj61VbGBV8tX4="
     },
     "rosssmyth-press": {
       "type": "Git",
@@ -28,9 +28,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "f3d341d765d20a819afc2636ac775beb291da63e",
-      "url": "https://github.com/RossSmyth/press/archive/f3d341d765d20a819afc2636ac775beb291da63e.tar.gz",
-      "hash": "sha256-24BMuNj7+ovnMgEQwxfgc0r2XDX2P/9fWdoWc5qAQIk="
+      "revision": "8c7fca7622f9fb96255b9439d6b2642d80e0920c",
+      "url": "https://github.com/RossSmyth/press/archive/8c7fca7622f9fb96255b9439d6b2642d80e0920c.tar.gz",
+      "hash": "sha256-lA61Pi11vc2W0XXtPR3vaATrkFRWonm2iiD9E5AO76Q="
     },
     "sops-nix": {
       "type": "Git",
@@ -41,9 +41,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "c5eebd4eb2e3372fe12a8d70a248a6ee9dd02eff",
-      "url": "https://github.com/Mic92/sops-nix/archive/c5eebd4eb2e3372fe12a8d70a248a6ee9dd02eff.tar.gz",
-      "hash": "sha256-wFcr32ZqspCxk4+FvIxIL0AZktRs6DuF8oOsLt59YBU="
+      "revision": "17eea6f3816ba6568b8c81db8a4e6ca438b30b7c",
+      "url": "https://github.com/Mic92/sops-nix/archive/17eea6f3816ba6568b8c81db8a4e6ca438b30b7c.tar.gz",
+      "hash": "sha256-ktjWTq+D5MTXQcL9N6cDZXUf9kX8JBLLBLT0ZyOTSYY="
     },
     "zoeee": {
       "type": "Git",
