@@ -18,8 +18,11 @@
 
       "manga".port = config.services.suwayomi-server.settings.server.port;
 
-      # syncyomi
-      "sync".port = config.services.syncyomi.settings.port;
+      "sync" = {
+        port = config.services.syncyomi.settings.port;
+        maxUpload = "1000m";
+        timeout = 600;
+      };
     };
   };
 }

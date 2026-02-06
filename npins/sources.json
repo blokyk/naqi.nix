@@ -54,9 +54,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "ad88f004cbbef9ba9ee87d4539cd07ae18017cbb",
-      "url": "https://github.com/blokyk/packages.nix/archive/ad88f004cbbef9ba9ee87d4539cd07ae18017cbb.tar.gz",
-      "hash": "sha256-MU3itw3LSJEzCz7BAbquG5qgVEdjuuWOrvht+vKktKQ="
+      "revision": "5deca198a816a354f4a8f466c06808328ff6461c",
+      "url": "https://github.com/blokyk/packages.nix/archive/5deca198a816a354f4a8f466c06808328ff6461c.tar.gz",
+      "hash": "sha256-xAT9tRKND/Xnida8cP4WuQtQjUjfr2B0o1RrGJ6tMvU="
     }
   },
   "version": 7
