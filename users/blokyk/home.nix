@@ -26,6 +26,7 @@ in {
     ripgrep
     nixos-option
     update-suwayomi
+    nix-sweep
   ];
 
   home.sessionVariables.NIXD_FLAGS = "-log=error";
