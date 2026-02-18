@@ -19,4 +19,6 @@ in {
   nom-upgrade = ''
     npins -d /etc/nixos/npins update
   '' + nom-alias "switch";
+
+  sops-edit = "sudo EDITOR=nano sops edit";
 }
