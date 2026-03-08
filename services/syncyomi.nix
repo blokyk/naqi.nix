@@ -1,19 +1,5 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
-  syncyomi-pkg = pkgs.syncyomi.overrideAttrs (prev: {
-    version = "1.1.4";
-    src = pkgs.fetchFromGitHub {
-      owner = "syncyomi";
-      repo = "syncyomi";
-      tag = "v1.1.4";
-      hash = "sha256-pU3zxzixKoYnJsGpfvC/SVWIu0adsaiiVcLn0IZe64w=";
-    };
-    vendorHash = "sha256-fzPEljXFskr1/qzTsnASFNNc+8vA7kqO21mhMqwT44w=";
-
-    # todo: fix version patch
-    # todo(real): upstream update + finalAttrs-based patch to nixpkgs
-  });
-
   syncyomi-cfg = config.services.syncyomi;
   session-secret = config.sops.secrets.syncyomi;
 in {
@@ -21,7 +7,6 @@ in {
 
   services.syncyomi = {
     enable = true;
-    package = syncyomi-pkg;
 
     settings = {
       host = "0.0.0.0";
