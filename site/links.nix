@@ -40,7 +40,7 @@ in {
 
       "cv.pdf" = buildTypstFromGitHub {
         repo = "cv";
-        hash = "sha256-8rt46lfVQhF2/NW7DkdJUF4tM19Sfv4SgIaGYRhQGYg=";
+        hash = "sha256-OawBmqfpZzVJEN6Id6+xHtve4ud3Nv8dD99dnYiiWZs=";
       };
     };
   };
