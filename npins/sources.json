@@ -9,15 +9,15 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "5bd3589390b431a63072868a90c0f24771ff4cbb",
-      "url": "https://github.com/nix-community/home-manager/archive/5bd3589390b431a63072868a90c0f24771ff4cbb.tar.gz",
-      "hash": "sha256-Tl2I0YXdhSTufGqAaD1ySh8x+cvVsEI1mJyJg12lxhI="
+      "revision": "27b93804fbef1544cb07718d3f0a451f4c4cd6c0",
+      "url": "https://github.com/nix-community/home-manager/archive/27b93804fbef1544cb07718d3f0a451f4c4cd6c0.tar.gz",
+      "hash": "sha256-Dp5Ir2u4jJDGCgeMRviHvEQDe+U37hMxp6RSNOoMMPc="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre948083.0182a3613243/nixexprs.tar.xz",
-      "hash": "sha256-QuLskcmhZmccr+kp9DhjrH7AkFvA9mf+dZdOQfNq/KI="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre958961.aca4d95fce49/nixexprs.tar.xz",
+      "hash": "sha256-nbKkTH2oRlWaAjeDh/QMraqjfj/C2xJFa53twFzRd8o="
     },
     "rosssmyth-press": {
       "type": "Git",
@@ -28,9 +28,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "40abaa1c8e446c6970390df8aac649d5f511ca3d",
-      "url": "https://github.com/RossSmyth/press/archive/40abaa1c8e446c6970390df8aac649d5f511ca3d.tar.gz",
-      "hash": "sha256-VtjWzzuF/4r3Bo4ZiQnEnAyJW4LPOqlbLA3E+mF4yt8="
+      "revision": "2c40a8fe58675063437e606d0d288e02670ab497",
+      "url": "https://github.com/RossSmyth/press/archive/2c40a8fe58675063437e606d0d288e02670ab497.tar.gz",
+      "hash": "sha256-2EfD8kgVNcVtbzvrAkz8t4l5nvpiyDT1p/A4X1i1vkE="
     },
     "sops-nix": {
       "type": "Git",
@@ -41,9 +41,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "d7755d820f5fa8acf7f223309c33e25d4f92e74f",
-      "url": "https://github.com/Mic92/sops-nix/archive/d7755d820f5fa8acf7f223309c33e25d4f92e74f.tar.gz",
-      "hash": "sha256-MJuVJeszZEziquykEHh/hmgIHYxUcuoG/1aowpLiSeU="
+      "revision": "1d9b98a29a45abe9c4d3174bd36de9f28755e3ff",
+      "url": "https://github.com/Mic92/sops-nix/archive/1d9b98a29a45abe9c4d3174bd36de9f28755e3ff.tar.gz",
+      "hash": "sha256-hmIvE/slLKEFKNEJz27IZ8BKlAaZDcjIHmkZ7GCEjfw="
     },
     "zoeee": {
       "type": "Git",
@@ -54,9 +54,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "fcf22d05b2aff4834e65de253d9d183704278918",
-      "url": "https://github.com/blokyk/packages.nix/archive/fcf22d05b2aff4834e65de253d9d183704278918.tar.gz",
-      "hash": "sha256-SBsRv11J9+BwdYpTa205zSzWDy5mGd7XPtManeyG3pM="
+      "revision": "e1294a46f965ae071e07ea78551c4ed1f0c85e7c",
+      "url": "https://github.com/blokyk/packages.nix/archive/e1294a46f965ae071e07ea78551c4ed1f0c85e7c.tar.gz",
+      "hash": "sha256-BY/Cl8RQupopHgapY9U/xldXwmugdFGHPuzEbQwAPUE="
     }
   },
   "version": 7
