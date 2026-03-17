@@ -42,6 +42,8 @@ in {
         repo = "cv";
         hash = "sha256-OawBmqfpZzVJEN6Id6+xHtve4ud3Nv8dD99dnYiiWZs=";
       };
+
+      "inject.nix".url = "https://raw.githubusercontent.com/blokyk/frozenpins/refs/heads/main/inject.nix";
     };
   };
 }
