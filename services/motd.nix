@@ -31,6 +31,7 @@ in {
         nginx = "nginx";
         FlareSolverr = "flaresolverr";
         Picoshare = "picoshare";
+        Syncyomi = "syncyomi";
       };
     };
 
