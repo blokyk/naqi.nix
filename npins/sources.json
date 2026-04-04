@@ -16,8 +16,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre958961.aca4d95fce49/nixexprs.tar.xz",
-      "hash": "sha256-nbKkTH2oRlWaAjeDh/QMraqjfj/C2xJFa53twFzRd8o="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre960399.9dcb002ca169/nixexprs.tar.xz",
+      "hash": "sha256-G4+9cEu8XSqEWYUB6iRgDfrg53av6yyRwAKhSeKbUVw="
     },
     "rosssmyth-press": {
       "type": "Git",
@@ -54,9 +54,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "e1294a46f965ae071e07ea78551c4ed1f0c85e7c",
-      "url": "https://github.com/blokyk/packages.nix/archive/e1294a46f965ae071e07ea78551c4ed1f0c85e7c.tar.gz",
-      "hash": "sha256-BY/Cl8RQupopHgapY9U/xldXwmugdFGHPuzEbQwAPUE="
+      "revision": "9cda79775c9860c123f0241d7e8eec1a57ddd2fa",
+      "url": "https://github.com/blokyk/packages.nix/archive/9cda79775c9860c123f0241d7e8eec1a57ddd2fa.tar.gz",
+      "hash": "sha256-AKmJLoKxo4uDz30OY8XecOMWFP+ElHqx8GnmAVtA7PY="
     }
   },
   "version": 7

@@ -23,13 +23,4 @@ in {
     owner = freshrss.user;
     group = freshrss.user;
   };
-
-  # we can't define it with hostrr becauses freshrss uses complex rewriting
-  # rules and fastcgi in its nginx configuration
-  services.nginx.virtualHosts = {
-    ${host} = {
-      forceSSL = true;
-      enableACME = true;
-    };
-  };
 }

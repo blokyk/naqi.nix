@@ -4,6 +4,16 @@
     base = config.networking.domain;
 
     hosts = {
+      # we can't actually define it with hostrr becauses freshrss uses
+      # complex rewriting rules and fastcgi in its nginx configuration.
+      # note: this has to be kept in sync with the host in services/freshrss.nix
+      "rss" = {
+        extraConfig = {
+          forceSSL = true;
+          enableACME = true;
+        };
+      };
+
       "img" = {
         port = config.services.immich.port;
         maxUpload = "50000m";
