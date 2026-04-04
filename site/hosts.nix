@@ -1,7 +1,7 @@
 { config, ... }: {
   services.hostrr = {
     enable = true;
-    base = "zoeee.net";
+    base = config.networking.domain;
 
     hosts = {
       "img" = {

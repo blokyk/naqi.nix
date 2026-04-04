@@ -2,13 +2,14 @@
 let
   freshrss = config.services.freshrss;
   adminPass = config.sops.secrets.freshrss-admin;
+  host = "rss.${config.services.hostrr.base}";
 in {
   services.freshrss = {
     enable = true;
 
     webserver = "nginx";
-    virtualHost = "rss.zoeee.net";
-    baseUrl = "https://rss.zoeee.net";
+    virtualHost = host;
+    baseUrl = "https://${host}";
 
     defaultUser = "admin";
     passwordFile = adminPass.path;
@@ -26,7 +27,7 @@ in {
   # we can't define it with hostrr becauses freshrss uses complex rewriting
   # rules and fastcgi in its nginx configuration
   services.nginx.virtualHosts = {
-    "rss.zoeee.net" = {
+    ${host} = {
       forceSSL = true;
       enableACME = true;
     };
