@@ -33,6 +33,17 @@
         maxUpload = "1000m";
         timeout = 600;
       };
+
+      # note: this has to be kept in sync with the base-url in services/ntfy.nix
+      "ntfy" = {
+        port = config.services.ntfy-sh.settings.port;
+        extraConfig.locations."/" = {
+          extraConfig = ''
+            proxy_set_header Connection "upgrade";
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          '';
+        };
+      };
     };
   };
 }
