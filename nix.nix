@@ -6,6 +6,8 @@
     settings = {
       experimental-features = [ "flakes" "nix-command" ];
 
+      trusted-users = [ "root" "blokyk" ];
+
       # disabled because I'm not updating <zoeee> constantly anymore
       # # ensures that tarballs always get re-fetched when appropriate
       # tarball-ttl = 0;
