@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    <sops-nix/modules/sops>
+    (import <sops-nix/modules/sops>)
   ];
 
   environment.systemPackages = with pkgs; [

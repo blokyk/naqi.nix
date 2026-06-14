@@ -3,7 +3,7 @@ let
   syncyomi-cfg = config.services.syncyomi;
   session-secret = config.sops.secrets.syncyomi;
 in {
-  imports = [ <zoeee/modules> ];
+  imports = [ (import <zoeee/modules>) ];
 
   services.syncyomi = {
     enable = true;

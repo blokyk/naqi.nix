@@ -13,7 +13,7 @@ let
     ];
   };
 in {
-  imports = [ <zoeee/hm-modules> ];
+  imports = [ (import <zoeee/hm-modules>) ];
 
   home.stateVersion = "25.05"; # this should stay at the version originally installed
 
