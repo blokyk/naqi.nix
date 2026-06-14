@@ -4,7 +4,9 @@ let
     { repo, name ? "${repo}.pdf", rev ? "main", hash, typstEnv ? (_: []), fonts ? [] }: {
       content-type = "application/pdf";
       file = pkgs.buildTypstDocument {
-        inherit name typstEnv fonts;
+        inherit typstEnv fonts;
+        pname = name;
+        version = "1.0";
         src = pkgs.fetchFromGitHub {
           owner = "blokyk";
           inherit repo rev hash;
