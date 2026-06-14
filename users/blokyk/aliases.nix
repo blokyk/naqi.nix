@@ -9,7 +9,7 @@ let
             --log-format internal-json -v 2>&1 \
           |& nom --json
         } &&
-      exec sudo --login --user=$USER
+        exec env $SHELL
     '';
 in {
   nom-switch = nom-alias "switch";
