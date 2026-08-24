@@ -44,6 +44,10 @@
           '';
         };
       };
+
+      "lgtl" = {
+        port = config.services.languagetool.port;
+      };
     };
   };
 }
