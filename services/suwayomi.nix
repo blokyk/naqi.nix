@@ -29,7 +29,7 @@ in {
             #./suwayomi-pr-1813.patch
           ];
 
-          outputHash = "sha256-q7NIKUnh4c2A4Otp/8C2lZF+t8KYSy9IEe0Nxbme91g=";
+          outputHash = "sha256-707JXdSLkt+/iEgdxQO0jUbqrlPNRGkMAGtAMu8qDbw=";
         }
       );
       suwayomi-server = (prev.callPackage <zoeee/pkgs> {}).suwayomi-server.override {
