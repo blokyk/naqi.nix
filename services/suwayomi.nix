@@ -79,6 +79,9 @@ in {
 
   systemd.services.suwayomi-server = {
     script = lib.mkBefore ''
+      # ensure data dir exists (important for envsubst for some reason)
+      mkdir -p ${suwayomi.dataDir}/.local/share/Tachidesk
+
       ${lib.optionalString syncyomi-enabled ''
         export TACHIDESK_SYNCYOMI_API_KEY="$(<${syncyomi-api-key})"
       ''}
