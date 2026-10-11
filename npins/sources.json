@@ -1,5 +1,18 @@
 {
   "pins": {
+    "cv": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "blokyk",
+        "repo": "cv"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "0ed97f98e0bef8a4f50580b841144ade7d6a11d7",
+      "url": "https://github.com/blokyk/cv/archive/0ed97f98e0bef8a4f50580b841144ade7d6a11d7.tar.gz",
+      "hash": "sha256-OawBmqfpZzVJEN6Id6+xHtve4ud3Nv8dD99dnYiiWZs="
+    },
     "home-manager": {
       "type": "Git",
       "repository": {
@@ -45,6 +58,22 @@
       "revision": "a8be3b14935d3532604c51c8dfe3021c73d1a885",
       "url": "https://github.com/Mic92/sops-nix/archive/a8be3b14935d3532604c51c8dfe3021c73d1a885.tar.gz",
       "hash": "sha256-51gxD0eLcJkxH2TYdhE+Qsf04yg3PRV7anCAqOFX70E="
+    },
+    "sxc-2024-report": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "blokyk",
+        "repo": "sxc-2024-report"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "pretty",
+      "revision": "6475d7e54c032516171cf5e6a921a31b83dbacd3",
+      "url": "https://api.github.com/repos/blokyk/sxc-2024-report/tarball/refs/tags/pretty",
+      "hash": "sha256-gIkRh5XxjIbHM6Xi3KhSbSo973IAY8U/iwIbarkCiUo="
     },
     "zoeee": {
       "type": "Git",

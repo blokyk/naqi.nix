@@ -1,19 +1,4 @@
-{ pkgs, ... }:
-let
-  buildTypstFromGitHub =
-    { repo, name ? "${repo}.pdf", rev ? "main", hash, typstEnv ? (_: []), fonts ? [] }: {
-      content-type = "application/pdf";
-      file = pkgs.buildTypstDocument {
-        inherit typstEnv fonts;
-        pname = name;
-        version = "1.0";
-        src = pkgs.fetchFromGitHub {
-          owner = "blokyk";
-          inherit repo rev hash;
-        };
-      };
-    };
-in {
+{ pkgs, ... }: {
   services.hostrr.hosts = {
     ".".links = {
       "shrug" = {
@@ -22,7 +7,7 @@ in {
       };
 
       "brrr" = {
-        file = /var/www/brrr.opus;
+        file = "/var/www/brrr.opus";
         content-type = "audio/opus";
       };
 
@@ -31,18 +16,29 @@ in {
 
       "proxy-tunnel".url = "https://github.com/blokyk/proxy-tunnel-pkg/releases/latest";
 
-      "sxc-2024.pdf" = buildTypstFromGitHub {
-        repo = "sxc-2024-report";
-        rev = "pretty";
-        hash = "sha256-gIkRh5XxjIbHM6Xi3KhSbSo973IAY8U/iwIbarkCiUo=";
+      "sxc-2024.pdf" = {
+        content-type = "application/pdf";
+        file = pkgs.buildTypstDocument {
+          pname = "sxc-2024-report";
+          version = "1.0";
 
-        typstEnv = universe: [ universe.algo ];
-        fonts = [ pkgs.libertinus ];
+          src = builtins.storePath <sxc-2024-report>;
+
+          typstEnv = universe: [ universe.algo ];
+          fonts = [ pkgs.libertinus ];
+        };
       };
 
-      "cv.pdf" = buildTypstFromGitHub {
-        repo = "cv";
-        hash = "sha256-OawBmqfpZzVJEN6Id6+xHtve4ud3Nv8dD99dnYiiWZs=";
+      "cv.pdf" = {
+        content-type = "application/pdf";
+        file = pkgs.buildTypstDocument {
+          pname = "cv";
+          version = "1.0";
+          src = builtins.storePath <cv>;
+
+          typstEnv = universe: [];
+          fonts = [];
+        };
       };
 
       "inject.nix".url = "https://raw.githubusercontent.com/blokyk/frozenpins/refs/heads/main/inject.nix";
