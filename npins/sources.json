@@ -58,6 +58,19 @@
       "revision": "daf2ac5ec16666953f94e7fbef90f11dd3cb997c",
       "url": "https://github.com/blokyk/packages.nix/archive/daf2ac5ec16666953f94e7fbef90f11dd3cb997c.tar.gz",
       "hash": "sha256-zyziJwPwHTqv0DwI927cPwSwLW4QuEn4ggzqPKUdwWo="
+    },
+    "zoeee.net": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "blokyk",
+        "repo": "zoeee.net"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "bcbae8d3d81d00c35f33a432a4dd88659ae81a6a",
+      "url": "https://github.com/blokyk/zoeee.net/archive/bcbae8d3d81d00c35f33a432a4dd88659ae81a6a.tar.gz",
+      "hash": "sha256-wcBrHpFlCr7qGCl2tPZqdugFAp4M8ZPsHjVSrBBz0XE="
     }
   },
   "version": 8

@@ -2,7 +2,7 @@
   services.hostrr.hosts."." = {
     extraConfig = {
       locations."/" = {
-        root = "/var/www/zoeee.net";
+        root = <zoeee.net>;
       };
 
       # todo: robots.txt
