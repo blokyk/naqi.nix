@@ -8,9 +8,11 @@
 
       trusted-users = [ "root" "blokyk" ];
 
-      # disabled because I'm not updating <zoeee> constantly anymore
-      # # ensures that tarballs always get re-fetched when appropriate
-      # tarball-ttl = 0;
+      # setup signing key so this can be used as a substituter
+      secret-key-files = "/root/nix/cache-priv-key.pem";
+
+      min-free = 1 * 1024 * 1024 * 1024; # 1GiB
+      max-free = 8 * 1024 * 1024 * 1024; # 8GiB
     };
 
     # set up NIX_PATH to point to the pinned versions from npins
