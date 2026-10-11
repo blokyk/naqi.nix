@@ -9,37 +9,6 @@ let
   flare = config.services.flaresolverr;
   syncyomi = config.services.syncyomi;
 in {
-  nixpkgs.overlays = [(
-    final: prev: {
-      suwayomi-server-unwrapped = (prev.callPackage <zoeee/pkgs> {}).suwayomi-server-unwrapped.overrideAttrs (
-        finalAttrs: _: {
-          version = "2.1.2038";
-          rev = "b97a808e7bb09e3faade22f76dbe60f2babebade";
-
-          # specifically fetch the jar artifact
-          src = prev.fetchFromGitHub {
-            owner = "Suwayomi";
-            repo = "Suwayomi-Server";
-            rev = finalAttrs.rev;
-            hash = "sha256-v1tjNda7PzwllT4jvotIYcQ4d/vpjk6idalYqC8KVm8=";
-          };
-
-          patches = [
-            # original version of PR#1813 (syncyomi implementation)
-            ./suwayomi-pr-base-1813.patch
-            # rebased version
-            #./suwayomi-pr-1813.patch
-          ];
-
-          outputHash = "sha256-707JXdSLkt+/iEgdxQO0jUbqrlPNRGkMAGtAMu8qDbw=";
-        }
-      );
-      suwayomi-server = (prev.callPackage <zoeee/pkgs> {}).suwayomi-server.override {
-        inherit (final) suwayomi-server-unwrapped;
-      };
-    }
-  )];
-
   services.suwayomi-server = {
     enable = true;
     openFirewall = false; # we already proxy through nginx
@@ -71,6 +40,9 @@ in {
       # Cloudflare bypass
       flareSolverrEnabled = flare.enable;
       flareSolverrUrl = "http://localhost:${toString flare.port}";
+
+      # databaseType = "POSTGRESQL";
+      # databaseUrl  = "";
 
       # Extensions
       extensionRepos = [ "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json" ];
