@@ -4,6 +4,8 @@ let
   passwdFile = config.sops.secrets.suwayomi.path;
   syncyomi-api-key = config.sops.secrets.syncyomi-api-key.path;
 
+  syncyomi-enabled = suwayomi.enable && (suwayomi.settings.server.syncYomiEnabled or false);
+
   flare = config.services.flaresolverr;
   syncyomi = config.services.syncyomi;
 in {
@@ -77,7 +79,7 @@ in {
 
   systemd.services.suwayomi-server = {
     script = lib.mkBefore ''
-      ${lib.optionalString (suwayomi.settings.server.syncYomiEnabled or false) ''
+      ${lib.optionalString syncyomi-enabled ''
         export TACHIDESK_SYNCYOMI_API_KEY="$(<${syncyomi-api-key})"
       ''}
     '';
@@ -89,7 +91,7 @@ in {
     group = suwayomi.group;
   };
 
-  sops.secrets.syncyomi-api-key = lib.mkIf (suwayomi.settings.server.syncYomiEnabled or false) {
+  sops.secrets.syncyomi-api-key = lib.mkIf syncyomi-enabled {
     sopsFile = ./suwayomi.secrets.yaml;
     owner = suwayomi.user;
     group = suwayomi.group;
